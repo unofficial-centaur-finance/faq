@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=DM+Sans&family=Roboto+Mono:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans&family=Roboto+Mono:wght@400&display=swap");
 html {
   box-sizing: border-box;
 }
@@ -11,9 +11,9 @@ html {
 
 body {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+  flex-wrap: wrap;
+  height: 100vh;
+  margin: 0;
 }
 
 .container {
@@ -39,49 +39,68 @@ h4 {
 
 p {
   font-family: "Roboto Mono", monospace;
+  font-size: 18px;
   color: #fff;
+}
+
+a {
+  font-family: "Roboto Mono", monospace;
+  font-size: 18px;
+  color: #33cc33;
 }
 
 h1 {
   font-size: 35px;
-  font-weight: 400;
   letter-spacing: 2px;
 }
 
 h2 {
   font-family: "Roboto Mono", monospace;
-  font-size: 25px;
-  font-weight: 400;
+  font-size: 28px;
   color: #979ea5;
   margin: 0;
 }
+
 h2 span {
   display: inline-block;
   border-bottom: 1px solid #979ea5;
 }
 
 h3 {
+  font-size: 23px;
+  color: #000;
+  margin: 40px 0 10px;
+}
+
+h4 {
   font-size: 20px;
-  font-weight: 400;
   margin: 0;
 }
 
 p {
   font-size: 18px;
-  font-weight: 400;
   line-height: 1.5;
 }
 
-a {
-  color: #33cc33;
+ul {
+  margin-top: 0;
+  margin-bottom: 40px;
+}
+
+li {
+  font-family: "Roboto Mono", monospace;
+  font-size: 18px;
+  margin-bottom: 10px;
 }
 
 header {
   width: 100%;
+  position: relative;
   background: #181923;
   margin-bottom: 50px;
   padding: 20px 0 50px;
 }
+
 header img {
   width: 250px;
   margin-bottom: 20px;
@@ -94,17 +113,49 @@ main {
   width: 100%;
 }
 
-.intro {
-  margin: 0 0 40px;
+main h2 {
+  color: #000;
+  margin-bottom: 30px;
 }
+
+.intro {
+  margin: 0 0 60px;
+}
+
 .intro p {
   color: #181923;
+}
+
+
+.overview {
+  margin-bottom: 70px;
+}
+
+.recent,
+.links {
+  padding: 20px;
+  background: #33cc33;
+}
+
+.recent h2,
+.links h2,
+.recent li,
+.links li,
+.recent li a,
+.links li a {
+  color: #fff;
+}
+
+.recent ul,
+.links ul {
+  margin-bottom: 0;
 }
 
 .accordion {
   overflow: hidden;
   margin-top: 20px;
 }
+
 .accordion__question {
   position: relative;
   padding: 35px 20px;
@@ -112,6 +163,7 @@ main {
   margin-bottom: 2px;
   background: #33cc33;
 }
+
 .accordion__answer {
   padding: 0 20px;
   max-height: 0;
@@ -120,9 +172,11 @@ main {
   transition: all 0.25s ease-out;
   opacity: 0;
 }
+
 .accordion__answer p {
-  color: #000;
+  color: rgb(41, 39, 39);
 }
+
 .accordion__active .accordion__answer {
   padding: 0 20px 20px;
   opacity: 1;
@@ -132,11 +186,13 @@ footer {
   display: flex;
   flex-direction: column;
   text-align: center;
+  position: relative;
   width: 100%;
-  margin-top: 50px;
-  padding: 50px 0;
+  margin-top: 100px;
+  padding: 100px 0;
   background: #181923;
 }
+
 footer a {
   margin: 0 15px;
   text-decoration: none;
@@ -148,10 +204,52 @@ footer a {
   }
 
   h2 {
-    font-size: 30px;
+    font-size: 32px;
   }
 
   h3 {
-    font-size: 24px;
+    font-size: 25px;
+  }
+
+  h4 {
+    font-size: 21px;
+  }
+
+  .overview {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 70px;
+  }
+
+  .upcomming {
+    flex: 1;
+  }
+
+  .recent,
+  .links {
+    flex: 0 1 49%;
+  }
+}
+
+@media (min-width: 1700px) {
+  .illustration--header {
+    position: absolute;
+    content: "";
+    bottom: -50%;
+    right: 50px;
+    height: 300px;
+    width: 300px;
+    background: url(https://cntr.finance/img/illustration-17.png) no-repeat center / contain;
+  }
+
+  .illustration--footer {
+    position: absolute;
+    content: "";
+    top: -100px;
+    left: 50px;
+    height: 300px;
+    width: 300px;
+    background: url(https://cntr.finance/img/illustration-12.png) no-repeat center / contain;
   }
 }

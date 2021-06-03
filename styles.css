@@ -161,7 +161,8 @@ main h2 {
   padding: 35px 20px;
   cursor: pointer;
   margin-bottom: 2px;
-  background: #33cc33;
+  background: #121316;
+  border-bottom: 2px solid #33cc33;
 }
 
 .accordion__answer {

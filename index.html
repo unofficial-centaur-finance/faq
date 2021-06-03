@@ -1,251 +1,197 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Unofficial Centaur Finance FAQ</title>
-  <style>
-      @import url("https://fonts.googleapis.com/css2?family=DM+Sans&family=Roboto+Mono:wght@300&display=swap");
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v7.0.29,
+* Autoprefixer: v9.7.6
+* Browsers: last 4 version
+*/
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans&family=Roboto+Mono:wght@300&display=swap");
+
 html {
-  box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
 }
 
 *,
 *:before,
 *:after {
-  box-sizing: inherit;
+	-webkit-box-sizing: inherit;
+	box-sizing: inherit;
 }
 
 body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  padding: 0;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-wrap: wrap;
+	flex-wrap: wrap;
+	height: 100vh;
+	margin: 0;
 }
 
 .container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	-ms-flex-wrap: wrap;
+	flex-wrap: wrap;
 }
 
 .inner {
-  flex: 0 1 1200px;
-  padding: 0 20px;
+	-webkit-box-flex: 0;
+	-ms-flex: 0 1 1200px;
+	flex: 0 1 1200px;
+	padding: 0 20px;
 }
 
 h1,
 h2,
 h3,
 h4 {
-  font-family: "DM Sans", sans-serif;
-  color: #fff;
-  letter-spacing: 1px;
+	font-family: "DM Sans", sans-serif;
+	color: #fff;
+	letter-spacing: 1px;
 }
 
 p {
-  font-family: "Roboto Mono", monospace;
-  color: #fff;
-}
-
-h1 {
-  font-size: 35px;
-  font-weight: 400;
-  letter-spacing: 2px;
-}
-
-h2 {
-  font-family: "Roboto Mono", monospace;
-  font-size: 25px;
-  font-weight: 400;
-  color: #979ea5;
-  margin: 0;
-}
-h2 span {
-  display: inline-block;
-  border-bottom: 1px solid #979ea5;
-}
-
-h3 {
-  font-size: 20px;
-  font-weight: 400;
-  margin: 0;
-}
-
-p {
-  font-size: 18px;
-  font-weight: 400;
-  line-height: 1.5;
+	font-family: "Roboto Mono", monospace;
+	color: #fff;
 }
 
 a {
-  color: #33cc33;
+	font-family: "Roboto Mono", monospace;
+	color: #33cc33;
+}
+
+h1 {
+	font-size: 35px;
+	font-weight: 400;
+	letter-spacing: 2px;
+}
+
+h2 {
+	font-family: "Roboto Mono", monospace;
+	font-size: 25px;
+	font-weight: 400;
+	color: #979ea5;
+	margin: 0;
+}
+
+h2 span {
+	display: inline-block;
+	border-bottom: 1px solid #979ea5;
+}
+
+h3 {
+	font-size: 20px;
+	font-weight: 400;
+	margin: 0;
+}
+
+p {
+	font-size: 18px;
+	font-weight: 400;
+	line-height: 1.5;
 }
 
 header {
-  width: 100%;
-  background: #181923;
-  margin-bottom: 50px;
-  padding: 20px 0 50px;
+	width: 100%;
+	background: #181923;
+	margin-bottom: 50px;
+	padding: 20px 0 50px;
 }
+
 header img {
-  width: 250px;
-  margin-bottom: 20px;
-  padding: 0 20px;
+	width: 250px;
+	margin-bottom: 20px;
+	padding: 0 20px;
 }
 
 main {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-ms-flex-direction: column;
+	flex-direction: column;
+	width: 100%;
 }
 
 .intro {
-  margin: 0 0 40px;
+	margin: 0 0 40px;
 }
+
 .intro p {
-  color: #181923;
+	color: #181923;
 }
 
 .accordion {
-  overflow: hidden;
-  margin-top: 20px;
+	overflow: hidden;
+	margin-top: 20px;
 }
+
 .accordion__question {
-  position: relative;
-  padding: 35px 20px;
-  cursor: pointer;
-  margin-bottom: 2px;
-  background: #33cc33;
+	position: relative;
+	padding: 35px 20px;
+	cursor: pointer;
+	margin-bottom: 2px;
+	background: #33cc33;
 }
+
 .accordion__answer {
-  padding: 0 20px;
-  max-height: 0;
-  overflow: hidden;
-  will-change: max-height;
-  transition: all 0.25s ease-out;
-  opacity: 0;
+	padding: 0 20px;
+	max-height: 0;
+	overflow: hidden;
+	will-change: max-height;
+	-webkit-transition: all 0.25s ease-out;
+	-o-transition: all 0.25s ease-out;
+	transition: all 0.25s ease-out;
+	opacity: 0;
 }
+
 .accordion__answer p {
-  color: #000;
+	color: #000;
 }
+
 .accordion__active .accordion__answer {
-  padding: 0 20px 20px;
-  opacity: 1;
+	padding: 0 20px 20px;
+	opacity: 1;
 }
 
 footer {
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  width: 100%;
-  margin-top: 50px;
-  padding: 50px 0;
-  background: #181923;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-item-align: end;
+	align-self: flex-end;
+	text-align: center;
+	width: 100%;
+	margin-top: 50px;
+	padding: 50px 0;
+	background: #181923;
 }
+
 footer a {
-  margin: 0 15px;
-  text-decoration: none;
+	margin: 0 15px;
+	text-decoration: none;
 }
 
 @media (min-width: 992px) {
-  h1 {
-    font-size: 50px;
-  }
+	h1 {
+		font-size: 50px;
+	}
 
-  h2 {
-    font-size: 30px;
-  }
+	h2 {
+		font-size: 30px;
+	}
 
-  h3 {
-    font-size: 24px;
-  }
+	h3 {
+		font-size: 24px;
+	}
 }
-  </style>
-</head>
-<body>
- <header>
-  <img src="https://cntr.finance/img/logo.png" alt="Centaur Finance">
-  <div class="container">
-    <div class="inner">
-
-      <h1>Bridging DeFi and traditional finance</h1>
-      <h2>The <span>Unofficial</span> FAQ</h2>
-    </div>
-  </div>
-</header>
-
-<main>
-  <div class="container">
-    <div class="inner">
-      <div class="accordion">
-        <div class="intro">
-          <p>Below you will find some common questions and answers relating to Centaur Finance.</p>
-          <p>AMAs are currently conducted each Thursday (9am UTC) on Telegram and they are a great source of information. Please see the <a href="https://medium.com/centaur"> official Medium blog</a> for the transcripts from previous AMAs.</p>
-        </div>
-        <div class="accordion__question">
-          <h3>Staking</h3>
-        </div>
-        <div class="accordion__answer">
-          <p>Staking is currently closed but the smart contract for BonFi's muylti-yeild staking pool is under way. More information on the BonFi partnership can be found <a href="https://medium.com/centaur/centaur-partners-with-bonfi-to-increase-adoption-of-defi-d0a5ba6bec3" target="_blank">here</a>.</p>
-          <p>Centaur are also working on their CNTR &lt;&gt; ETH bridge. See <a target="_blank" href="https://t.me/OfficialCentaur/78365">here</a> for the latest update.</p>
-        </div>
-      </div>
-
-      <div class="accordion">
-        <div class="accordion__question">
-          <h3>Hadar (web wallet)</h3>
-        </div>
-        <div class="accordion__answer">
-          <p>Hadar is available on the Playstore. The iOS version is under review by Apple.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</main>
-
-<footer>
-  <div class="container">
-    <div class="inner">
-      <a href="https://cntr.finance/" target="_blank">Site</a>
-      <a href="http://swap.cntr.finance/" target="_blank">Swap</a>
-      <a href="https://t.me/OfficialCentaur" target="_blank">Telegram</a>
-      <a href="https://t.me/OfficialCentaur" target="_blank">Twitter</a>
-    </div>
-  </div>
-</footer>
-<script>
-  const accordions = document.querySelectorAll(".accordion");
-
-  const openAccordion = (accordion) => {
-    const answer = accordion.querySelector(".accordion__answer");
-    accordion.classList.add("accordion__active");
-    answer.style.maxHeight = answer.scrollHeight + "px";
-  };
-
-  const closeAccordion = (accordion) => {
-    const answer = accordion.querySelector(".accordion__answer");
-    accordion.classList.remove("accordion__active");
-    answer.style.maxHeight = null;
-  };
-
-  accordions.forEach((accordion) => {
-    const question = accordion.querySelector(".accordion__question");
-    const answer = accordion.querySelector(".accordion__answer");
-
-    question.onclick = () => {
-      if (answer.style.maxHeight) {
-        closeAccordion(accordion);
-      } else {
-        accordions.forEach((accordion) => closeAccordion(accordion));
-        openAccordion(accordion);
-      }
-    };
-  });
-  </script> 
-</body>
-</html>
-

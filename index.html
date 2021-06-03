@@ -5,7 +5,165 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Unofficial Centaur Finance FAQ</title>
-  <link href="https://unofficial-centaur-finance.github.io/blob/main/styles.css">
+  <style>
+      @import url("https://fonts.googleapis.com/css2?family=DM+Sans&family=Roboto+Mono:wght@300&display=swap");
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.inner {
+  flex: 0 1 1200px;
+  padding: 0 20px;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: "DM Sans", sans-serif;
+  color: #fff;
+  letter-spacing: 1px;
+}
+
+p {
+  font-family: "Roboto Mono", monospace;
+  color: #fff;
+}
+
+h1 {
+  font-size: 35px;
+  font-weight: 400;
+  letter-spacing: 2px;
+}
+
+h2 {
+  font-family: "Roboto Mono", monospace;
+  font-size: 25px;
+  font-weight: 400;
+  color: #979ea5;
+  margin: 0;
+}
+h2 span {
+  display: inline-block;
+  border-bottom: 1px solid #979ea5;
+}
+
+h3 {
+  font-size: 20px;
+  font-weight: 400;
+  margin: 0;
+}
+
+p {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+a {
+  color: #33cc33;
+}
+
+header {
+  width: 100%;
+  background: #181923;
+  margin-bottom: 50px;
+  padding: 20px 0 50px;
+}
+header img {
+  width: 250px;
+  margin-bottom: 20px;
+  padding: 0 20px;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.intro {
+  margin: 0 0 40px;
+}
+.intro p {
+  color: #181923;
+}
+
+.accordion {
+  overflow: hidden;
+  margin-top: 20px;
+}
+.accordion__question {
+  position: relative;
+  padding: 35px 20px;
+  cursor: pointer;
+  margin-bottom: 2px;
+  background: #33cc33;
+}
+.accordion__answer {
+  padding: 0 20px;
+  max-height: 0;
+  overflow: hidden;
+  will-change: max-height;
+  transition: all 0.25s ease-out;
+  opacity: 0;
+}
+.accordion__answer p {
+  color: #000;
+}
+.accordion__active .accordion__answer {
+  padding: 0 20px 20px;
+  opacity: 1;
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  width: 100%;
+  margin-top: 50px;
+  padding: 50px 0;
+  background: #181923;
+}
+footer a {
+  margin: 0 15px;
+  text-decoration: none;
+}
+
+@media (min-width: 992px) {
+  h1 {
+    font-size: 50px;
+  }
+
+  h2 {
+    font-size: 30px;
+  }
+
+  h3 {
+    font-size: 24px;
+  }
+}
+  </style>
 </head>
 <body>
  <header>
@@ -58,7 +216,35 @@
     </div>
   </div>
 </footer>
-<script src="https://unofficial-centaur-finance.github.io/main/scripts.js"></scrip> 
+<script>
+  const accordions = document.querySelectorAll(".accordion");
+
+  const openAccordion = (accordion) => {
+    const answer = accordion.querySelector(".accordion__answer");
+    accordion.classList.add("accordion__active");
+    answer.style.maxHeight = answer.scrollHeight + "px";
+  };
+
+  const closeAccordion = (accordion) => {
+    const answer = accordion.querySelector(".accordion__answer");
+    accordion.classList.remove("accordion__active");
+    answer.style.maxHeight = null;
+  };
+
+  accordions.forEach((accordion) => {
+    const question = accordion.querySelector(".accordion__question");
+    const answer = accordion.querySelector(".accordion__answer");
+
+    question.onclick = () => {
+      if (answer.style.maxHeight) {
+        closeAccordion(accordion);
+      } else {
+        accordions.forEach((accordion) => closeAccordion(accordion));
+        openAccordion(accordion);
+      }
+    };
+  });
+  </script> 
 </body>
 </html>
 

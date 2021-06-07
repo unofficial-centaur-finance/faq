@@ -166,16 +166,19 @@ main h2 {
 
 .accordion__question {
   position: relative;
-  padding: 35px 20px;
+  padding: 20px;
   cursor: pointer;
   margin-bottom: 2px;
   background: #121316;
   border-bottom: 2px solid #33cc33;
-  /* transition: background 0.3s; */
+  transition: background 0.3s;
 }
 
+.accordion__active .accordion__question,
 .accordion__question:hover {
-  background: linear-gradient(to right,  #121316 77%,#33cc33 100%);
+  /* background: linear-gradient(to right,  #121316 77%,#33cc33 100%); */
+  background: #33cc33;
+  border-bottom: 2px solid #121316;
 }
 
 .accordion__answer {

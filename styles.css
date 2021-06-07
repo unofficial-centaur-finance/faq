@@ -98,13 +98,19 @@ header {
   position: relative;
   background: #181923;
   margin-bottom: 50px;
-  padding: 20px 0 50px;
+  padding: 80px 0 50px;
 }
 
-header img {
-  width: 250px;
-  margin-bottom: 20px;
-  padding: 0 20px;
+.logo {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: #181923;
+  padding: 20px;
+}
+
+.logo img {
+  width: 200px;
 }
 
 main {
@@ -119,6 +125,7 @@ main h2 {
 }
 
 .intro {
+  max-width: 850px;
   margin: 0 0 60px;
 }
 
@@ -163,6 +170,11 @@ main h2 {
   margin-bottom: 2px;
   background: #121316;
   border-bottom: 2px solid #33cc33;
+  /* transition: background 0.3s; */
+}
+
+.accordion__question:hover {
+  background: linear-gradient(to right,  #121316 77%,#33cc33 100%);
 }
 
 .accordion__answer {
@@ -233,11 +245,11 @@ footer a {
   }
 }
 
-@media (min-width: 1700px) {
+@media (min-width: 1200px) {
   .illustration--header {
     position: absolute;
     content: "";
-    bottom: -50%;
+    bottom: -200px;
     right: 50px;
     height: 300px;
     width: 300px;

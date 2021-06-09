@@ -39,16 +39,17 @@ h4 {
 
 p {
   font-family: "Roboto Mono", monospace;
-  font-size: 18px;
-  color: #fff;
+  font-size: 17px;
+  margin: 0 0 20px;
 }
 
 a {
   font-family: "Roboto Mono", monospace;
-  font-size: 18px;
+  font-size: 17px;
   color: #33cc33;
+  overflow-wrap: break-word;
 }
-
+.
 h1 {
   font-size: 35px;
   letter-spacing: 2px;
@@ -73,13 +74,8 @@ h3 {
 }
 
 h4 {
-  font-size: 20px;
+  font-size: 19px;
   margin: 0;
-}
-
-p {
-  font-size: 18px;
-  line-height: 1.5;
 }
 
 ul {
@@ -98,12 +94,10 @@ header {
   position: relative;
   background: #181923;
   margin-bottom: 50px;
-  padding: 80px 0 50px;
+  padding: 0 0 50px;
 }
 
 .logo {
-  position: fixed;
-  top: 0;
   width: 100%;
   background: #181923;
   padding: 15px 20px;
@@ -134,7 +128,6 @@ main h2 {
   color: #181923;
 }
 
-
 .overview {
   margin-bottom: 70px;
 }
@@ -159,12 +152,24 @@ main h2 {
   margin-bottom: 0;
 }
 
+.anchor-links {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 50px;
+  box-shadow: 0 0.5rem 1.25rem rgb(0, 0, 0, 10%);
+  padding: 20px;
+}
+
+.anchor-links a {
+}
+
 .accordion {
   overflow: hidden;
   margin-top: 20px;
 }
 
 .accordion__question {
+  display: block;
   position: relative;
   padding: 20px;
   cursor: pointer;
@@ -174,9 +179,12 @@ main h2 {
   transition: background 0.3s;
 }
 
+.accordion__question:target {
+  background: #33cc33;
+}
+
 .accordion__active .accordion__question,
 .accordion__question:hover {
-  /* background: linear-gradient(to right,  #121316 77%,#33cc33 100%); */
   background: #33cc33;
   border-bottom: 2px solid #121316;
 }
@@ -192,6 +200,7 @@ main h2 {
 
 .accordion__answer p {
   color: rgb(41, 39, 39);
+  margin-top: 20px;
 }
 
 .accordion__active .accordion__answer {
@@ -229,7 +238,7 @@ footer a {
   }
 
   h4 {
-    font-size: 21px;
+    font-size: 19px;
   }
 
   .overview {
@@ -250,6 +259,22 @@ footer a {
 }
 
 @media (min-width: 1200px) {
+  /* .anchor-links {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 300px;
+    background: #000;
+    opacity: 0;
+    z-index: -1;
+  }
+
+  .anchor-links.show {
+    transition: opacity 0.2s;
+    opacity: 1;
+    z-index: 100;
+  } */
+
   .illustration--header {
     position: absolute;
     content: "";
@@ -269,5 +294,21 @@ footer a {
     height: 300px;
     width: 300px;
     background: url(https://cntr.finance/img/illustration-12.png) no-repeat center / contain;
+  }
+}
+
+@media (min-width: 1700px) {
+  .anchor-links {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 300px;
+    background: #000;
+    opacity: 0;
+  }
+
+  .anchor-links.show {
+    opacity: 1;
+    z-index: 100;
   }
 }

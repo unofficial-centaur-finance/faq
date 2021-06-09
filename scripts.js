@@ -25,3 +25,19 @@ accordions.forEach((accordion) => {
 		}
 	};
 });
+
+
+if (window.innerWidth >= 1700) {
+	window.addEventListener('scroll', function (e) {
+		const anchorLinks = document.querySelector('.anchor-links')
+		const accordions = document.querySelector('.accordions');
+		const distanceToTop = accordions.getBoundingClientRect().top;
+
+		if (distanceToTop <= 20) {
+			anchorLinks.classList.add("show");
+		}
+		else {
+			anchorLinks.classList.remove("show");
+		}
+	});
+}

@@ -26,18 +26,26 @@ accordions.forEach((accordion) => {
 	};
 });
 
+window.addEventListener('scroll', function (e) {
+	const anchorLinks = document.querySelector('.anchor-links')
+	const accordions = document.querySelector('.accordions');
+	const distanceToTop = accordions.getBoundingClientRect().top;
 
-if (window.innerWidth >= 1700) {
-	window.addEventListener('scroll', function (e) {
-		const anchorLinks = document.querySelector('.anchor-links')
-		const accordions = document.querySelector('.accordions');
-		const distanceToTop = accordions.getBoundingClientRect().top;
+	if (distanceToTop <= 20) {
+		anchorLinks.classList.add("show");
+	}
+	else {
+		anchorLinks.classList.remove("show");
+	}
+});
 
-		if (distanceToTop <= 20) {
-			anchorLinks.classList.add("show");
-		}
-		else {
-			anchorLinks.classList.remove("show");
-		}
-	});
-}
+// const urlHash = document.location.hash;
+
+// if (urlHash) {
+// 	const slicedUrlHash = urlHash.slice(1)
+// 	const test = document.getElementById(slicedUrlHash);
+// 	console.log(test)
+// 	const parent = test.parentNode;
+// 	console.log(parent)
+// 	parent.classList.add('boom')
+// }

@@ -16,7 +16,7 @@ const openAccordion = (accordion) => {
 
 const closeAccordion = (accordion) => {
 	const answer = accordion.querySelector(".accordion__answer");
-	accordion.classList.remove("accordion__active");
+	accordion.classList.remove("accordion__active", "boom");
 	answer.style.maxHeight = null;
 };
 

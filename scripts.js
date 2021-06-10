@@ -1,5 +1,13 @@
-const accordions = document.querySelectorAll(".accordion");
+const urlHash = document.location.hash;
+if (urlHash) {
+	const slicedUrlHash = urlHash.slice(1)
+	const selectedAccordion = document.getElementById(slicedUrlHash);
+	const parent = selectedAccordion.parentNode;
 
+	parent.classList.add('boom');
+}
+
+const accordions = document.querySelectorAll(".accordion");
 const openAccordion = (accordion) => {
 	const answer = accordion.querySelector(".accordion__answer");
 	accordion.classList.add("accordion__active");
@@ -31,7 +39,7 @@ window.addEventListener('scroll', function (e) {
 	const accordions = document.querySelector('.accordions');
 	const distanceToTop = accordions.getBoundingClientRect().top;
 
-	if (distanceToTop <= 20) {
+	if (distanceToTop <= 100) {
 		anchorLinks.classList.add("show");
 	}
 	else {
@@ -39,13 +47,14 @@ window.addEventListener('scroll', function (e) {
 	}
 });
 
-// const urlHash = document.location.hash;
+// const anchor = document.querySelectorAll('.anchor-links a');
+// anchor.forEach((anchors) => {
+// 	console.log(anchor)
+// 	const anchorsLink = anchors.querySelector('.anchor-links a');
 
-// if (urlHash) {
-// 	const slicedUrlHash = urlHash.slice(1)
-// 	const test = document.getElementById(slicedUrlHash);
-// 	console.log(test)
-// 	const parent = test.parentNode;
-// 	console.log(parent)
-// 	parent.classList.add('boom')
-// }
+// 	anchorsLink.onclick = () => {
+// 		console.log('boom')
+// 	};
+// });
+
+

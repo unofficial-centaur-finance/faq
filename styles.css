@@ -359,7 +359,17 @@ footer a {
 }
 
 @media (min-width: 1200px) {
+  @keyframes bounce {
+    from {
+      transform: translateY(0px);
+    }
+    to {
+      transform: translateY(-5px);
+    }
+  }
+
   .illustration--header {
+    animation: bounce 2s infinite alternate;
     position: absolute;
     content: "";
     bottom: -200px;
@@ -371,6 +381,7 @@ footer a {
   }
 
   .illustration--footer {
+    animation: bounce 2s infinite alternate;
     position: absolute;
     content: "";
     top: -100px;

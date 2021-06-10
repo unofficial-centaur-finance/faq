@@ -81,7 +81,7 @@ h3 {
 
 h4 {
   font-size: 19px;
-  margin: 0;
+  margin: 0 0 10px;
 }
 
 ul {
@@ -186,8 +186,6 @@ main h2 {
   background: #33cc33;
 }
 
-.recent h2,
-.docs h2,
 .recent li,
 .docs li,
 .recent li a,

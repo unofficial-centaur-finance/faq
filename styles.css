@@ -91,7 +91,7 @@ ul {
 
 li {
   font-family: "Roboto Mono", monospace;
-  font-size: 18px;
+  font-size: 17px;
   margin-bottom: 10px;
 }
 
@@ -139,7 +139,11 @@ main h2 {
 }
 
 .overview {
-  margin-bottom: 70px;
+  margin-bottom: 50px;
+}
+
+.upcoming {
+  margin-bottom: 50px;
 }
 
 .recent,
@@ -203,6 +207,10 @@ main h2 {
   max-width: 900px;
 }
 
+.accordions h2 {
+  margin-bottom: 10px;
+}
+
 .accordion {
   overflow: hidden;
   margin-top: 20px;
@@ -263,6 +271,11 @@ footer {
 footer a {
   margin: 0 15px;
   text-decoration: none;
+}
+
+.credit {
+  color: #fff;
+  margin-top: 20px;
 }
 
 @media (min-width: 992px) {

@@ -182,7 +182,8 @@ main h2 {
 .recent li,
 .docs li,
 .recent li a,
-.docs li a {
+.docs li a,
+.overview li a {
   color: #fff;
 }
 
